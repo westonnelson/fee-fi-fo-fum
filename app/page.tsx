@@ -34,7 +34,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-4">Our Purpose</h2>
           <p className="text-xl">
             FeeFiFoFum (FFF) aims to revolutionize the memecoin space by introducing the concept of Fee Meta. 
-            We're here to create a fun, engaging, and potentially rewarding experience for our community while 
+            We&apos;re here to create a fun, engaging, and potentially rewarding experience for our community while 
             pushing the boundaries of what memecoins can achieve on the Solana blockchain.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function Home() {
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Join the FFF Community</h2>
           <p className="text-xl mb-8">
-            Be part of the next big thing in the memecoin world. Together, we'll reach new heights!
+            Be part of the next big thing in the memecoin world. Together, we&apos;ll reach new heights!
           </p>
           <div className="flex justify-center items-center space-x-4">
             <TokenIcon size={40} />

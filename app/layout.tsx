@@ -52,7 +52,7 @@ export default function RootLayout({
             </main>
             <footer className="bg-purple-800 text-white p-4">
               <div className="container mx-auto text-center">
-                © 2024 FeeFiFoFum (FFF). All rights reserved.
+                © 2023 FeeFiFoFum (FFF). All rights reserved.
               </div>
             </footer>
           </div>
