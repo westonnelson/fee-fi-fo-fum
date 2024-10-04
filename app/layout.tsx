@@ -4,6 +4,7 @@ import Link from 'next/link'
 import WalletConnectionProvider from './components/WalletConnectionProvider'
 import WalletConnection from './components/WalletConnection'
 import TokenIcon from './components/TokenIcon'
+import Favicons from './components/Favicons'
 import { Menu } from 'lucide-react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,6 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Favicons />
+      </head>
       <body className={inter.className}>
         <WalletConnectionProvider>
           <div className="flex flex-col min-h-screen bg-purple-900">

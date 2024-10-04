@@ -41,6 +41,20 @@ export default function Home() {
 
         <div className="my-16 border-t border-white opacity-25"></div>
 
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4">FFF Contract Address</h2>
+          <a 
+            href="https://solscan.io/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-xl text-purple-300 hover:text-white transition duration-300"
+          >
+            View on Solscan
+          </a>
+        </div>
+
+        <div className="my-16 border-t border-white opacity-25"></div>
+
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {features.map((feature) => (
             <Link key={feature.name} href={feature.href}>
