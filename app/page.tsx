@@ -1,101 +1,70 @@
-import Image from "next/image";
+import Link from 'next/link'
+import TokenIcon from './components/TokenIcon'
+import { ArrowRight, Coins, Users, FileText, MessageCircle, BookOpen } from 'lucide-react'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const features = [
+    { name: 'Token', icon: Coins, href: '/token' },
+    { name: 'Roadmap', icon: ArrowRight, href: '/roadmap' },
+    { name: 'Team', icon: Users, href: '/team' },
+    { name: 'FAQ', icon: FileText, href: '/faq' },
+    { name: 'Contact', icon: MessageCircle, href: '/contact' },
+    { name: 'Blog', icon: BookOpen, href: '/blog' },
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-purple-900 to-purple-600 text-white">
+      <div className="container mx-auto px-4 py-16">
+        <div className="flex flex-col items-center text-center mb-16">
+          <TokenIcon size={120} />
+          <h1 className="text-5xl font-bold mt-8 mb-4">FeeFiFoFum (FFF)</h1>
+          <p className="text-xl mb-4">The giant of Solana memecoins</p>
+          <p className="text-2xl font-semibold mb-8">The Fee Meta is here for Memecoins</p>
+          <Link 
+            href="/token" 
+            className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Explore FFF
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="my-16 border-t border-white opacity-25"></div>
+
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4">Our Purpose</h2>
+          <p className="text-xl">
+            FeeFiFoFum (FFF) aims to revolutionize the memecoin space by introducing the concept of Fee Meta. 
+            We're here to create a fun, engaging, and potentially rewarding experience for our community while 
+            pushing the boundaries of what memecoins can achieve on the Solana blockchain.
+          </p>
+        </div>
+
+        <div className="my-16 border-t border-white opacity-25"></div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          {features.map((feature) => (
+            <Link key={feature.name} href={feature.href}>
+              <div className="bg-white bg-opacity-10 p-6 rounded-lg hover:bg-opacity-20 transition duration-300 flex flex-col items-center">
+                <feature.icon className="w-12 h-12 mb-4" />
+                <h2 className="text-lg font-semibold">{feature.name}</h2>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="my-16 border-t border-white opacity-25"></div>
+
+        <div className="text-center">
+          <h2 className="text-3xl font-bold mb-4">Join the FFF Community</h2>
+          <p className="text-xl mb-8">
+            Be part of the next big thing in the memecoin world. Together, we'll reach new heights!
+          </p>
+          <div className="flex justify-center items-center space-x-4">
+            <TokenIcon size={40} />
+            <span className="text-2xl font-bold">FeeFiFoFum</span>
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
